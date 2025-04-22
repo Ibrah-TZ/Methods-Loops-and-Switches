@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Methods</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container py-5">
+        <h2 class="text-center text-primary mb-4">String Playground - JS String Method</h2>
+        <div class="mb-3">
+            <label for="userInput" class="form-label">Enter a string:</label>
+            <input type="text" id="userInput" class="form-control" placeholder="Type something here...">
+        </div>
+        <div class="mb-4">
+            <button class="btn btn-primary me-2 mb-2" onclick="applyMethod('upper')">.toUpperCase()</button>
+            <button class="btn btn-secondary me-2 mb-2" onclick="applyMethod('lower')">.toLowerCase()</button>
+            <button class="btn btn-success me-2 mb-2" onclick="applyMethod('trim')">.trim</button>
+            <button class="btn btn-warning me-2 mb-2" onclick="applyMethod('slice')">.slice(1,4)</button>
+            <button class="btn btn-info me-2 mb-2" onclick="applyMethod('includes')">.includes("a")</button>
+            <button class="btn btn-dark me-2 mb-2" onclick="applyMethod('length')">.length</button>
+        </div>
+        <h5>Result:</h5>
+        <div id="output" class="border p-2 rounded"></div>
+    </div>
+    <script>
+        function applyMethod(method) {
+            var input = document.getElementById('userInput').value;
+            var result = "";
+            switch (method) {
+                case 'upper':
+                    result = input.toUpperCase();
+                    break;
+                case 'lower':
+                    result = input.toLowerCase();
+                    break;
+                case 'trim':
+                    result = input.trim();
+                    break;
+                case 'slice':
+                    result = input.slice(1,4);
+                    break;
+                case 'includes':
+                    result = input.includes("a") ? "Yes, includes 'a'" : "No,doesn't include 'a'";
+                    break;
+                case 'length':
+                    result = `Length: ${input.length}`;
+                    break;
+                default:
+                    result = "Invalid method";
+            }
+            document.getElementById('output').textContent = result;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  </body>
+</html>
